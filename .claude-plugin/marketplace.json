@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "theme-review-kit",
+  "description": "A Claude Code skill that assists human reviewers with reviewing themes submitted to the WordPress.org Theme Directory.",
+  "owner": {
+    "name": "ThemeReviewKit contributors",
+    "url": "https://github.com/som3669/theme-review-kit"
+  },
+  "plugins": [
+    {
+      "name": "theme-review-kit",
+      "description": "Review Classic and Block themes against the current WordPress.org Theme Review requirements, and prepare a Trac response.",
+      "source": "./",
+      "category": "development"
+    }
+  ]
+}

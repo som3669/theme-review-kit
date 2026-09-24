@@ -50,7 +50,24 @@ one directory.
 
 You need [Claude Code](https://claude.com/claude-code).
 
-Start by cloning this repository:
+### Install as a plugin
+
+The shortest route. In Claude Code, add this repository as a plugin
+marketplace, then install from it:
+
+```
+/plugin marketplace add som3669/theme-review-kit
+/plugin install theme-review-kit
+```
+
+Update later with:
+
+```
+/plugin marketplace update theme-review-kit
+```
+
+If you would rather copy the skill in by hand, use one of the two
+installations below instead. Start by cloning:
 
 ```bash
 git clone https://github.com/som3669/theme-review-kit.git
@@ -105,6 +122,33 @@ Start Claude Code and run:
 
 Skills are loaded when a session starts. If Claude Code was already
 running, restart it.
+
+### Repository layout
+
+```
+theme-review-kit/
+│
+├── README.md
+├── LICENSE
+│
+├── .claude-plugin/
+│   ├── plugin.json
+│   └── marketplace.json
+│
+└── skills/
+    └── theme-review-kit/
+        ├── SKILL.md
+        └── references/
+            ├── requirements.md
+            ├── security.md
+            ├── classic-themes.md
+            ├── block-themes.md
+            ├── review-checklist.md
+            └── trac-response.md
+```
+
+The reference files are loaded only when they apply, so a Block theme
+review does not pull in Classic theme rules.
 
 ## Usage
 
