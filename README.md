@@ -44,22 +44,80 @@ findings as:
 
 ## Installation
 
-Copy the `theme-review-kit` skill directory into your Claude Code
-skills directory.
+ThemeReviewKit is a Claude Code skill. There is nothing to build and no
+dependencies to install — it is Markdown, and installing means copying
+one directory.
 
-For a project-level installation:
+You need [Claude Code](https://claude.com/claude-code).
+
+Start by cloning this repository:
+
+```bash
+git clone https://github.com/som3669/theme-review-kit.git
+```
+
+### Project-level installation
+
+Installs the skill for one project only.
+
+```bash
+cp -r theme-review-kit/skills/theme-review-kit /path/to/your-project/.claude/skills/
+```
+
+On Windows:
+
+```powershell
+Copy-Item -Recurse theme-review-kit\skills\theme-review-kit "C:\path\to\your-project\.claude\skills\"
+```
+
+The result:
 
 ```
-.claude/
-`-- skills/
-    `-- theme-review-kit/
-        |-- SKILL.md
-        `-- references/
+your-project/
+`-- .claude/
+    `-- skills/
+        `-- theme-review-kit/
+            |-- SKILL.md
+            `-- references/
 ```
+
+### User-level installation
+
+Installs the skill once, for every project.
+
+```bash
+cp -r theme-review-kit/skills/theme-review-kit ~/.claude/skills/
+```
+
+On Windows:
+
+```powershell
+Copy-Item -Recurse theme-review-kit\skills\theme-review-kit "$env:USERPROFILE\.claude\skills\"
+```
+
+### Check the installation
+
+Start Claude Code and run:
+
+```
+/theme-review-kit
+```
+
+Skills are loaded when a session starts. If Claude Code was already
+running, restart it.
 
 ## Usage
 
-Open the theme you want to review with Claude Code.
+### Review a theme
+
+Extract the submitted ZIP, then start Claude Code in the theme
+directory:
+
+```bash
+unzip theme-name.zip -d theme-name
+cd theme-name
+claude
+```
 
 Ask Claude:
 
@@ -69,6 +127,42 @@ Review this theme using ThemeReviewKit.
 
 Claude should first determine whether the theme is a Classic or
 Block theme and then apply the appropriate review process.
+
+### Narrower requests
+
+You do not have to run a full review every time:
+
+```
+Review this theme for security issues only.
+Is this a Classic or Block theme?
+Check the licensing and any bundled libraries.
+What still needs manual testing?
+```
+
+### Prepare the Trac comment
+
+Once you have checked the findings yourself:
+
+```
+Turn the verified findings into a Trac comment.
+```
+
+This is a separate step on purpose. Verify before you post.
+
+### What you get back
+
+A report in a fixed structure:
+
+- Theme information — name, version, theme type, review type
+- Required issues — file, line, evidence, applicable requirement,
+  suggested correction
+- Recommended — optional improvements, listed separately
+- Needs manual verification — what to test, and why static inspection
+  cannot confirm it
+- Review summary — counts for each category
+
+ThemeReviewKit will not tell you the theme passes or fails. That
+decision stays with you.
 
 ## Important
 
