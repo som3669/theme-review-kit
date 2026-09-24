@@ -3,7 +3,7 @@
   "name": "theme-review-kit",
   "description": "A Claude Code skill that assists human reviewers with reviewing themes submitted to the WordPress.org Theme Directory.",
   "owner": {
-    "name": "ThemeReviewKit contributors",
+    "name": "Som Shrestha",
     "url": "https://github.com/som3669/theme-review-kit"
   },
   "plugins": [
