@@ -50,14 +50,30 @@ one directory.
 
 You need [Claude Code](https://claude.com/claude-code).
 
-### Install as a plugin
+### Install from the community marketplace
 
-The shortest route. In Claude Code, add this repository as a plugin
-marketplace, then install from it:
+ThemeReviewKit is listed in Anthropic's Claude Code community plugin
+marketplace. In Claude Code:
+
+```
+/plugin marketplace add anthropics/claude-plugins-community
+/plugin install theme-review-kit@claude-plugins-community
+```
+
+Update later with:
+
+```
+/plugin marketplace update claude-plugins-community
+```
+
+### Install from this repository
+
+This repository is also a plugin marketplace of its own, which gets
+you changes as soon as they are pushed:
 
 ```
 /plugin marketplace add som3669/theme-review-kit
-/plugin install theme-review-kit
+/plugin install theme-review-kit@theme-review-kit
 ```
 
 Update later with:
