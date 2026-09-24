@@ -188,6 +188,38 @@ Review this theme using ThemeReviewKit.
 Claude should first determine whether the theme is a Classic or
 Block theme and then apply the appropriate review process.
 
+### Recommended full-review prompt
+
+For a more controlled review, paste this prompt instead. It spells out
+what each finding must contain, keeps recommendations separate from
+required issues, and holds back the Trac response until you have
+checked the findings:
+
+```
+Use ThemeReviewKit to review the WordPress theme in the current directory.
+
+First determine whether this is a Classic or Block theme.
+
+Review it against the current WordPress.org Theme Review requirements.
+
+For every finding:
+- identify the affected file
+- show the relevant code or line when possible
+- explain why it is an issue
+- classify it as REQUIRED, RECOMMENDED, or NEEDS MANUAL VERIFICATION
+
+Do not invent requirements.
+Do not treat recommendations as required issues.
+
+At the end, summarize:
+1. Theme type
+2. Required issues
+3. Recommended improvements
+4. Items needing manual verification
+
+Do not prepare the Trac response yet.
+```
+
 ### Narrower requests
 
 You do not have to run a full review every time:
