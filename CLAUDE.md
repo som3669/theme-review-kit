@@ -45,6 +45,21 @@ to build or test: the product is Markdown instructions.
 - The version number is the maintainer's decision. Do not bump it or
   tag it unless asked.
 
+## History & open items
+
+- 2026-09-24: submitted via https://platform.claude.com/plugins/submit
+  to `anthropics/claude-plugins-community` (the curated
+  `claude-plugins-official` takes no applications). Form: name
+  "ThemeReviewKit", platform Claude Code only, GPL-2.0-or-later, no
+  privacy URL. Passed review the same day; the catalog syncs nightly, so
+  the entry may lag approval.
+- Open: version stays 0.1.0 or goes to 1.0.0, and whether to push a git
+  tag. The maintainer decides.
+- Open: Cowork support is untested. Test it before adding that
+  platform.
+- Open: README/LICENSE credit "ThemeReviewKit contributors" while
+  `plugin.json` says "Som Shrestha".
+
 ## Naming and licensing
 
 - Do not put "WordPress" in the plugin's name. It is a trademark of the
